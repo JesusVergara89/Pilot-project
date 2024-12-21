@@ -1,5 +1,6 @@
 
 function Pilot() {
+  console.log("API Key:", process.env.REACT_APP_FIREBASE_API_KEY);
   return (
     <div>
 
