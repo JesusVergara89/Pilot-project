@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
+@layer components {
+  .card {
+    @apply  grid place-content-center rounded-lg text-white font-bold text-2xl;
+  }
+}

@@ -64,10 +64,10 @@ const Header = () => {
               ANS&CAR
             </h2>
             <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
-              Bienvenido a la herramienta en línea para la recolección de datos,
-              como fotos, nombres, ubicaciones y comentarios. Simplifica y
+              Bienvenido a la herramienta para la recolección de datos,
+              como fotos, nombres, ubicaciones y comentarios. La cual simplifica y
               agiliza la gestión de información para informes de equipos,
-              distribución de tierras, sistemas de pararrayos y mantenimiento
+              tierras físicas, sistemas de pararrayos y mantenimiento
               preventivo y correctivo.
             </p>
           </div>
