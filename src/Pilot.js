@@ -49,7 +49,6 @@ function Pilot() {
           <Route path="/projects" element={<Projects />} />
         </Route>
       </Routes>
-      <Footer />
     </div>
   );
 }

@@ -8,8 +8,12 @@
   font-family: "Montserrat", sans-serif;
 }
 
+body {
+  background-color: #1f2937;
+}
+
 @layer components {
   .card {
-    @apply  grid place-content-center rounded-lg text-white font-bold text-2xl;
+    @apply grid place-content-center rounded-lg text-white font-bold text-2xl;
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex-1 flex items-center justify-center px-2 py-6 bg-gray-800 text-white">
+    <footer className="flex-1 h-[100px] flex items-center justify-center px-2 py-3 text-white">
       <div className="w-full flex gap-3 flex-col lg:flex-row">
         <div className="card basis-1/3">
           <h4 className="text-xl font-bold mb-2">Contáctanos</h4>
