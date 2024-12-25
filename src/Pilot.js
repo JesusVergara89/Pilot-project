@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-
 import { db } from './firebase/firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/header/Header';
 
 function Pilot() {
   const [tasks, setTasks] = useState([]);
@@ -26,10 +27,11 @@ function Pilot() {
   console.log(tasks);
 
   return (
-    <div>
-      <h1>Pilot</h1>
+    <div className="min-h-screen flex flex-col">
 
-      <ul>{tasks.map(task => <li key={task.id}>{task.identification}</li>)}</ul>
+      <Routes>
+        <Route path="/" element={<Header />} />
+      </Routes>
     
     </div>
   );
