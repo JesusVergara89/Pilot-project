@@ -17,7 +17,7 @@ const Footer = () => {
             <p className="text-sm font-light">ventas@ansycar.mx</p>
           </div>
           <div className="flex items-center gap-2 w-[80%] mb-4">
-          <i class='bx bxs-phone-call text-xl' ></i>
+          <i className='bx bxs-phone-call text-xl' ></i>
             <p className="text-sm font-light">33 1604 2399</p>
           </div>
         </div>
@@ -39,14 +39,14 @@ const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <i class="bx bxl-facebook-circle text-5xl"></i>
+              <i className="bx bxl-facebook-circle text-5xl"></i>
             </a>
             <a
               href="https://www.instagram.com/ansycar/"
               target="_blank"
               rel="noreferrer"
             >
-              <i class="bx bxl-instagram-alt text-5xl"></i>
+              <i className="bx bxl-instagram-alt text-5xl"></i>
             </a>
           </div>
         </div>

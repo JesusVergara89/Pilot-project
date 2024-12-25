@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Pilot from "./Pilot";
 import reportWebVitals from "./reportWebVitals";
-import store from "./store";
+import { PersistGate } from "redux-persist/integration/react";
+import store, { persistor } from "./store";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -12,8 +13,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <HashRouter>
     <Provider store={store}>
-      <Pilot />
-      <ToastContainer />
+      <PersistGate loading={null} persistor={persistor}>
+        <Pilot />
+        <ToastContainer />
+      </PersistGate>
     </Provider>
   </HashRouter>
 );
