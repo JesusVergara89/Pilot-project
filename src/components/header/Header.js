@@ -60,15 +60,15 @@ const Header = () => {
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
           <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-7xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
               ANS&CAR
             </h2>
             <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
-              Bienvenido a la herramienta en línea para la gestión de la
-              información de{" "}
-              <span className="text-blue-200 font-bold">PRE</span> y{" "}
-              <span className="text-blue-200 font-bold">POST</span> informes de
-              ANS&CAR.
+              Bienvenido a la herramienta en línea para la recolección de datos,
+              como fotos, nombres, ubicaciones y comentarios. Simplifica y
+              agiliza la gestión de información para informes de equipos,
+              distribución de tierras, sistemas de pararrayos y mantenimiento
+              preventivo y correctivo.
             </p>
           </div>
         </div>

@@ -6,12 +6,14 @@ import reportWebVitals from "./reportWebVitals";
 import store from "./store";
 import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <HashRouter>
     <Provider store={store}>
       <Pilot />
+      <ToastContainer />
     </Provider>
   </HashRouter>
 );
