@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import Footer from "../footer/Footer";
+import { useSelector } from "react-redux";
 
 /**
  
@@ -16,6 +17,7 @@ import Footer from "../footer/Footer";
  */
 
 const Header = () => {
+  const config = useSelector((state) => state.config.config);
   const stats = [
     { name: "Informes activos", value: "12" },
     { name: "posts informes entregados", value: "4" },
@@ -25,6 +27,7 @@ const Header = () => {
   return (
     <>
       <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+       
         <img
           alt=""
           src="https://ansycar.mx/wp-content/uploads/2024/05/Fondo_Inicio.jpg"
@@ -66,18 +69,19 @@ const Header = () => {
                 ANS&CAR
               </h2>
               <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
-              <span className="text-gray-100 font-bold">Bienvenido.</span> Con esta herramienta podra recolectar de datos, como
-                fotos, nombres, ubicaciones y comentarios. Lo cual simplifica y
-                agiliza la gestión de información para informes de equipos,
-                tierras físicas, sistemas de pararrayos, mantenimiento
-                preventivo y correctivo.
+                <span className="text-gray-100 font-bold">Bienvenido.</span> Con
+                esta herramienta podra recolectar de datos, como fotos, nombres,
+                ubicaciones y comentarios. Lo cual simplifica y agiliza la
+                gestión de información para informes de equipos, tierras
+                físicas, sistemas de pararrayos, mantenimiento preventivo y
+                correctivo.
               </p>
             </div>
           </div>
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
               <Link className="hover:text-blue-300 text-lg" to="/login">
-                Inicio de sesión
+                {config ? "Cerrar sesión" : "Inicio de sesión"}
               </Link>
               <Link className="hover:text-blue-300 text-lg" to="/projects">
                 Proyectos

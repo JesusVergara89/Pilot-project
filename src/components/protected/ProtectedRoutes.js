@@ -1,12 +1,14 @@
-import React from 'react'
-import { Navigate, Outlet } from 'react-router-dom';
+import React from "react";
+import { useSelector } from "react-redux";
+import { Navigate, Outlet } from "react-router-dom";
 
-const ProtectedRoutes = ({ login }) => {
-    if(login){
-        return <Outlet />
-    } else { 
-        return <Navigate to='/login' />
-    }  
-}
+const ProtectedRoutes = () => {
+  const config = useSelector((state) => state.config.config);
+  if (config) {
+    return <Outlet />;
+  } else {
+    return <Navigate to="/login" />;
+  }
+};
 
-export default ProtectedRoutes
+export default ProtectedRoutes;

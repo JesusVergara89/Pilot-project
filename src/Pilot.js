@@ -1,26 +1,24 @@
 import { useEffect, useState } from "react";
-import { db } from "./firebase/firebaseConfig";
+import { auth, db } from "./firebase/firebaseConfig";
 import { collection, getDocs } from "firebase/firestore";
 import { Route, Routes } from "react-router-dom";
 import ProtectedRoutes from "./components/protected/ProtectedRoutes";
 import Projects from "./components/projects/Projects";
 import Header from "./components/header/Header";
-import Login from "./components/login/Login";
-import { useSelector, useDispatch } from "react-redux";
-import { closeConfig, openConfig } from "./store/slices/configSlice";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import Welcome from "./components/welcome/Welcome";
 
 function Pilot() {
-  const dispatch = useDispatch();
-  const config = useSelector((state) => state.config.config);
-
-  const handleToggleOpen = () => {
-    dispatch(openConfig());
-  };
-
-  const handleToggleClose = () => {
-    dispatch(closeConfig());
-  };
+  const [user, setUser] = useState(auth.currentUser); 
   const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,18 +37,16 @@ function Pilot() {
     fetchData();
   }, []);
 
-  console.log(tasks);
-  console.log(config);
+  console.log(tasks, user);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen relative flex flex-col">
+      {user && <Welcome />}
       <Routes>
         <Route path="/" element={<Header />} />
-        <Route
-          path="/login"
-          element={<Login handleLoginOpen={handleToggleOpen} handleToggleClose={handleToggleClose} login={config} />}
-        />
-        <Route element={<ProtectedRoutes login={config} />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route element={<ProtectedRoutes />}>
           <Route path="/projects" element={<Projects />} />
         </Route>
       </Routes>

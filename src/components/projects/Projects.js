@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Projects = () => {
   return (
-    <div>Projects</div>
-  )
-}
+    <div>
+      <p className="text-2xl text-white">ProtectedRoutes</p>
+    </div>
+  );
+};
 
-export default Projects
+export default Projects;

@@ -17,3 +17,18 @@ body {
     @apply grid place-content-center rounded-lg text-white font-bold text-2xl;
   }
 }
+
+.welcome {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 5px 15px;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  z-index: 50;
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  background-color: white;
+}
