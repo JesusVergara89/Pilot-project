@@ -64,6 +64,7 @@ const Login = () => {
   };
 
   const toRegistration = () => navigate("/register");
+  const toHome = () => navigate("/");
 
   return (
     <div className="relative isolate overflow-hidden py-24 sm:py-32">
@@ -146,13 +147,20 @@ const Login = () => {
               ></i>
             </div>
             {user?.uid === uuid ? (
-              <div className="flex justify-center w-[70%] mx-auto">
+              <div className="flex flex-col gap-4 justify-center w-[70%] mx-auto">
                 <button
                   onClick={toRegistration}
                   type="button"
                   className="bg-green-900 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 >
                   Registration
+                </button>
+                <button
+                  onClick={toHome}
+                  type="button"
+                  className="bg-blue-900 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                  Home
                 </button>
               </div>
             ) : (

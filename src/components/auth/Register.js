@@ -37,6 +37,8 @@ const Register = () => {
     }
   };
 
+  const toHome = () => navigate("/");
+
   return (
     <div className="relative isolate overflow-hidden py-24 sm:py-32">
       <form
@@ -115,6 +117,13 @@ const Register = () => {
               >
                 Register
               </button>
+              <button
+                  onClick={toHome}
+                  type="button"
+                  className="bg-blue-900 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                  Home
+                </button>
             </>
           )}
         </div>

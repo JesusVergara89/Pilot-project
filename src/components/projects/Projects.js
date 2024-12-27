@@ -2,6 +2,7 @@ import { collection, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { db } from "../../firebase/firebaseConfig";
 import Project from "./project/Project";
+import CreateProject from "./create/CreateProject";
 
 const Projects = () => {
   const [projt, setProjt] = useState([]);
@@ -26,13 +27,14 @@ const Projects = () => {
   console.log(projt);
 
   return (
-    <section className="flex mt-20 flex-wrap gap-4 p-4 items-center justify-center">
-      {
-        projt.map((item, index) => (
+    <>
+      <CreateProject />
+      <section className="flex mt-10 flex-wrap gap-4 p-4 items-center justify-center">
+        {projt.map((item, index) => (
           <Project key={index} item={item} />
-        ))
-      }
-    </section>
+        ))}
+      </section>
+    </>
   );
 };
 
