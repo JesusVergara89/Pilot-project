@@ -7,6 +7,7 @@ import Header from "./components/header/Header";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import Welcome from "./components/welcome/Welcome";
+import ProjectInfo from "./components/projects/project/ProjectInfo";
 
 function Pilot() {
   const [user, setUser] = useState(auth.currentUser);
@@ -27,6 +28,7 @@ function Pilot() {
         <Route path="/register" element={<Register />} />
         <Route element={<ProtectedRoutes />}>
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projectinfo/:id" element={<ProjectInfo />} />
         </Route>
       </Routes>
     </div>

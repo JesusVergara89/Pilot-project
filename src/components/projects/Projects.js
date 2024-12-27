@@ -1,19 +1,20 @@
 import { collection, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { db } from "../../firebase/firebaseConfig";
+import Project from "./project/Project";
 
 const Projects = () => {
-  const [tasks, setTasks] = useState([]);
+  const [projt, setProjt] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, "projects"));
-        const tasksArray = querySnapshot.docs.map((doc) => ({
+        const projtArray = querySnapshot.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
         }));
-        setTasks(tasksArray);
+        setProjt(projtArray);
       } catch (error) {
         console.error("Error fetching documents:", error);
       }
@@ -22,12 +23,16 @@ const Projects = () => {
     fetchData();
   }, []);
 
-  console.log(tasks);
+  console.log(projt);
 
   return (
-    <div>
-      <p className="text-2xl text-white">ProtectedRoutes</p>
-    </div>
+    <section className="flex mt-20 flex-wrap gap-4 p-4 items-center justify-center">
+      {
+        projt.map((item, index) => (
+          <Project key={index} item={item} />
+        ))
+      }
+    </section>
   );
 };
 
