@@ -11,7 +11,7 @@ const Project = ({ item }) => {
         <div className="font-bold text-xl mb-2">{item.company}</div>
         <p className="text-gray-900 text-base">{item.description}</p>
       </div>
-      <div className="flex flex-col gap-2 px-6 pt-4 pb-2 text-left text-center">
+      <div className="flex flex-col gap-2 px-6 pt-4 pb-2 text-left">
         <span className="inline-block border border-gray-700 p-4 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
           OTE: {item.identification}
         </span>
