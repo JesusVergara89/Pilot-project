@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Project from "./project/Project";
 import CreateProject from "./create/CreateProject";
 import { db } from "../../firebase/firebaseConfig";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const [projt, setProjt] = useState([]);
@@ -28,8 +29,14 @@ const Projects = () => {
 
   return (
     <>
+      <Link
+        to="/"
+        className="bg-blue-500 mt-20 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline block text-center mx-auto my-4"
+      >
+        Home
+      </Link>
       <CreateProject />
-      <section className="flex mt-10 flex-wrap gap-4 p-4 items-center justify-center">
+      <section className="flex flex-wrap gap-4 p-4 items-center justify-center">
         {projt.map((item, index) => (
           <Project key={index} item={item} />
         ))}
