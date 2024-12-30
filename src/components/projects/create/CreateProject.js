@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { auth, db } from "../../../firebase/firebaseConfig";
 import CreateProjectForm from "../../forms/CreateProjectForm";
+import { toast } from "react-toastify";
 
 const CreateProject = () => {
   const [newProject, setNewProject] = useState(false);
@@ -16,7 +17,7 @@ const CreateProject = () => {
     try {
       const user = auth.currentUser;
       if (!user) {
-        alert("Debes estar autenticado para crear un proyecto.");
+        toast("Debes estar autenticado para crear un proyecto.", { type: "warning" });
         return;
       }
 
@@ -28,30 +29,24 @@ const CreateProject = () => {
         userName: user.displayName,
         post_inform: {
           media: {
-            media: {
               images: [],
-              floor_plan: "",
               status: "pending",
             },
-          },
         },
         pre_inform: {
           media: {
-            media: {
               images: [],
-              freehand_floor_plan: "",
               status: "pending",
             },
-          },
         },
       };
 
       const docRef = await addDoc(collection(db, "projects"), newProject);
       console.log("Proyecto creado con ID:", docRef.id);
-      alert("Proyecto creado exitosamente");
+      toast("Proyecto creado exitosamente.", { type: "success" });
     } catch (error) {
       console.error("Error al crear el proyecto:", error);
-      alert("Hubo un error al crear el proyecto.");
+      toast("Hubo un error al crear el proyecto.", { type: "error" });
     }
   };
 

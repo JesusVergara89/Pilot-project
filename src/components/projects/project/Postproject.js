@@ -1,4 +1,5 @@
 import React from "react";
+import CreatePreInform from "../../forms/CreatePreInform";
 
 const Postproject = ({ info }) => {
 
@@ -6,6 +7,7 @@ const Postproject = ({ info }) => {
 
   return (
     <>
+    <CreatePreInform id = {info.id}/>
       {images.length > 0 ? (
         images.map((item, index) => (
           <div
