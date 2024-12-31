@@ -83,7 +83,7 @@ const Header = () => {
               <Link className="hover:text-blue-300 text-lg" to="/login">
                 {config ? "Cerrar sesión" : "Inicio de sesión"}
               </Link>
-              <Link className="hover:text-blue-300 text-lg" to="/projects">
+              <Link className="hover:text-blue-300 text-lg" to="/landing">
                 Proyectos
               </Link>
             </div>

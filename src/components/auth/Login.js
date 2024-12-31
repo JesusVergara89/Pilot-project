@@ -47,7 +47,7 @@ const Login = () => {
       toast("El usuario o contraseña no son correctos", { type: "error" });
     } finally {
       setIsLoading(false);
-      navigate("/projects");
+      navigate("/landing");
     }
   };
 

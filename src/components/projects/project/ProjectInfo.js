@@ -19,10 +19,7 @@ const ProjectInfo = () => {
   console.log(project, "this is the project");
 
   return (
-    <section className="flex mt-20 flex-col gap-4 p-4 items-center justify-center">
-      <h2 className="text-center mt-3 font-bold text-white text-2xl">
-        Project information
-      </h2>
+    <section className="flex mt-24 flex-col gap-4 p-4 items-center justify-center">
       <Postproject info={project} />
     </section>
   );
