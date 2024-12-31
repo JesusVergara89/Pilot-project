@@ -62,7 +62,7 @@ const CreatePreInform = ({ id }) => {
   return (
     <form
       onSubmit={handleSubmit(submit)}
-      className="mx-auto flex flex-col w-[70%] items-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      className="mx-auto flex flex-col w-[70%] items-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 gap-4"
     >
       <h3 className="text-2xl font-bold text-center">Crear registro</h3>
 

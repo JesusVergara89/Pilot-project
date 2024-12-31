@@ -36,7 +36,7 @@ const Projects = () => {
         Home
       </Link>
       <CreateProject />
-      <section className="flex flex-wrap gap-4 p-4 items-center justify-center">
+      <section className="flex flex-wrap gap-4 items-center justify-center">
         {projt.map((item, index) => (
           <Project key={index} item={item} />
         ))}
