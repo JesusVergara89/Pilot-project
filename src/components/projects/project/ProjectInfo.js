@@ -16,7 +16,7 @@ const ProjectInfo = () => {
     });
   }, [id]);
 
-  console.log(project, "this is the project");
+  //console.log(project, "this is the project");
 
   return (
     <section className="flex mt-24 flex-col gap-4 p-4 items-center justify-center">

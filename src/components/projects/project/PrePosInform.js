@@ -60,7 +60,7 @@ const PrePosInform = ({ info }) => {
               onClick={() => downloadImage(item.image)}
               className="px-4 absolute top-0 right-0 py-2 bg-blue-500 text-white hover:bg-blue-700 transition-colors"
             >
-              Expan Imagen
+              Expand Imagen
             </button>
           </div>
         </div>
@@ -94,7 +94,7 @@ const PrePosInform = ({ info }) => {
       {showPre && (
         <div className="w-full">
           <div className="mb-6">
-            <CreatePreInform id={info.id} />
+            <CreatePreInform id={info.id} info={info} />
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {renderImageCard(images_pre)}
@@ -105,7 +105,7 @@ const PrePosInform = ({ info }) => {
       {showPost && (
         <div className="w-full">
           <div className="mb-6">
-            <CreatePostInform id={info.id} />
+            <CreatePostInform id={info.id} info={info}  />
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {renderImageCard(images_post)}

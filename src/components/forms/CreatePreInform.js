@@ -5,7 +5,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { auth, db, storage } from "../../firebase/firebaseConfig";
 import { toast } from "react-toastify";
 
-const CreatePreInform = ({ id }) => {
+const CreatePreInform = ({ id, info }) => {
   const [progress, setProgress] = useState(0);
   const {
     register,
@@ -64,7 +64,9 @@ const CreatePreInform = ({ id }) => {
       onSubmit={handleSubmit(submit)}
       className="mx-auto flex flex-col w-[70%] items-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 gap-4"
     >
-      <h3 className="text-2xl font-bold text-center">Register information about pre mtto</h3>
+      <h3 className="text-2xl font-bold text-center">
+        Register information about pre mtto
+      </h3>
 
       <section className="flex flex-col w-full">
         <label className="block text-gray-700 text-sm font-bold mb-2">
@@ -102,13 +104,26 @@ const CreatePreInform = ({ id }) => {
         <label className="block text-gray-700 text-sm font-bold mb-2">
           Ubicación:
         </label>
-        <input
-          type="text"
-          {...register("location", {
-            required: "El campo ubicación es obligatorio",
-          })}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        />
+        {info.places && info.places.length > 0 ? (
+          <select
+            {...register("location", {
+              required: "El campo ubicación es obligatorio",
+            })}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          >
+            <option value="" disabled>
+              Seleccione una ubicación
+            </option>
+            {info.places.map((place, index) => (
+              <option key={index} value={place}>
+                {place}
+              </option>
+            ))}
+            <option value="no_contemplado">No contemplado</option>
+          </select>
+        ) : (
+          <p className="text-gray-500">Cargando ubicaciones...</p>
+        )}
         {errors.location && (
           <p className="text-red-500">{errors.location.message}</p>
         )}

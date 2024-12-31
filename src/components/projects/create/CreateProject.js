@@ -54,7 +54,7 @@ const CreateProject = () => {
   const setProject = () => setNewProject(!newProject);
 
   return (
-    <div className="relative isolate overflow-hidden py-8 sm:py-8 flex items-center justify-center">
+    <div className="relative mt-20 isolate overflow-hidden py-8 sm:py-8 flex items-center justify-center">
       {newProject ? (
         <CreateProjectForm
           handleSubmit={handleSubmit}

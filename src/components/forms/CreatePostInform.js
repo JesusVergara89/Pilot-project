@@ -5,7 +5,7 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { auth, db, storage } from "../../firebase/firebaseConfig";
 import { toast } from "react-toastify";
 
-const CreatePostInform = ({ id }) => {
+const CreatePostInform = ({ id, info }) => {
   const [progress, setProgress] = useState(0);
   const {
     register,
@@ -103,13 +103,22 @@ const CreatePostInform = ({ id }) => {
         <label className="block text-gray-700 text-sm font-bold mb-2">
           Ubicación:
         </label>
-        <input
-          type="text"
+        <select
           {...register("location", {
             required: "El campo ubicación es obligatorio",
           })}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        />
+        >
+          <option value="" disabled>
+            Seleccione una ubicación
+          </option>
+          {info.places.map((place, index) => (
+            <option key={index} value={place}>
+              {place}
+            </option>
+          ))}
+          <option value="no_contemplado">No contemplado</option>
+        </select>
         {errors.location && (
           <p className="text-red-500">{errors.location.message}</p>
         )}
