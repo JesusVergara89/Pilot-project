@@ -27,6 +27,7 @@ const CreateProject = () => {
         description: data.description,
         identification: data.identification,
         userName: user.displayName,
+        places: data.places,
         post_inform: {
           media: {
               images: [],

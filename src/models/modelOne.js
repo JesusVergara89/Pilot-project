@@ -2,6 +2,8 @@ const data = {
   description: "Instalación de tierras físicas",
   id: "nBXFfVfyU8kKgiCzwMgf",
   identification: "24-232",
+  userName: "jesus",
+  places: ["sub1", "sub2"],
   post_inform: {
     media: {
       images: [
@@ -35,8 +37,7 @@ const data = {
       ],
       status: "pending",
     },
-  },
-  userName: "jesus"
+  }
 };
 
 export default data;
