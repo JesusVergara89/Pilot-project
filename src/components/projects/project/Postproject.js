@@ -4,7 +4,7 @@ import CreatePostInform from "../../forms/CreatePostInform";
 
 const Postproject = ({ info }) => {
   const [showPost, setShowPost] = useState(false);
-  const [showPre, setShowPre] = useState(true); // Mostrar Pre Info inicialmente
+  const [showPre, setShowPre] = useState(true);
 
   const images_post = info?.post_inform?.media?.images || [];
   const images_pre = info?.pre_inform?.media?.images || [];
