@@ -6,7 +6,9 @@ import { auth, db, storage } from "../../firebase/firebaseConfig";
 import { toast } from "react-toastify";
 
 const CreatePreInform = ({ id, info }) => {
+
   const [progress, setProgress] = useState(0);
+
   const resetForm = {
     comments: "",
     description: "",
@@ -16,6 +18,7 @@ const CreatePreInform = ({ id, info }) => {
     element_name: "",
     createdAt: "",
   };
+  
   const {
     register,
     handleSubmit,

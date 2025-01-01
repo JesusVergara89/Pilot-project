@@ -8,6 +8,14 @@ import { toast } from "react-toastify";
 const CreateProject = () => {
   const [newProject, setNewProject] = useState(false);
 
+  const resetForm = {
+    company: "",
+    createdAt: "",
+    description: "",
+    identification: "",
+    places: "",
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -15,6 +23,7 @@ const CreateProject = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -52,6 +61,7 @@ const CreateProject = () => {
       const docRef = await addDoc(collection(db, "projects"), newProject);
       console.log("Proyecto creado con ID:", docRef.id);
       toast("Proyecto creado exitosamente.", { type: "success" });
+      reset(resetForm);
     } catch (error) {
       console.error("Error al crear el proyecto:", error);
       toast("Hubo un error al crear el proyecto.", { type: "error" });
