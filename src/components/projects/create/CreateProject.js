@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { auth, db } from "../../../firebase/firebaseConfig";
@@ -7,6 +7,11 @@ import { toast } from "react-toastify";
 
 const CreateProject = () => {
   const [newProject, setNewProject] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -17,7 +22,9 @@ const CreateProject = () => {
     try {
       const user = auth.currentUser;
       if (!user) {
-        toast("Debes estar autenticado para crear un proyecto.", { type: "warning" });
+        toast("Debes estar autenticado para crear un proyecto.", {
+          type: "warning",
+        });
         return;
       }
 
@@ -30,15 +37,15 @@ const CreateProject = () => {
         places: data.places,
         post_inform: {
           media: {
-              images: [],
-              status: "pending",
-            },
+            images: [],
+            status: "pending",
+          },
         },
         pre_inform: {
           media: {
-              images: [],
-              status: "pending",
-            },
+            images: [],
+            status: "pending",
+          },
         },
       };
 
@@ -54,7 +61,7 @@ const CreateProject = () => {
   const setProject = () => setNewProject(!newProject);
 
   return (
-    <div className="relative mt-20 isolate overflow-hidden py-8 sm:py-8 flex items-center justify-center">
+    <div className="relative mt-32 isolate overflow-hidden py-8 sm:py-8 flex items-center justify-center">
       {newProject ? (
         <CreateProjectForm
           handleSubmit={handleSubmit}

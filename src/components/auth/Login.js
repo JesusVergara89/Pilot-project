@@ -66,7 +66,7 @@ const Login = () => {
   const toRegistration = () => navigate("/register");
 
   return (
-    <div className="relative isolate overflow-hidden py-24 sm:py-32">
+    <div className="relative isolate mt-10 overflow-hidden py-24 sm:py-32">
       <>
         {config === false ? (
           <LoginForm

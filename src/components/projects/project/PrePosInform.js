@@ -71,7 +71,7 @@ const PrePosInform = ({ info }) => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-6">
+    <div className="flex mt-8 flex-col items-center gap-6">
       <div className="flex justify-center gap-4 mb-4">
         <button
           onClick={handleShowPre}
