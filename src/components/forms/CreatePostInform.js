@@ -7,9 +7,21 @@ import { toast } from "react-toastify";
 
 const CreatePostInform = ({ id, info }) => {
   const [progress, setProgress] = useState(0);
+
+  const resetForm = {
+    comments: "",
+    description: "",
+    image: "",
+    location: "",
+    data_loader: "" ,
+    element_name: "",
+    createdAt: "" 
+  };
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const user = auth.currentUser;
@@ -52,6 +64,7 @@ const CreatePostInform = ({ id, info }) => {
           });
           toast("Proyecto actualizado exitosamente.", { type: "success" });
           setProgress(0);
+          reset(resetForm);
         }
       );
     } catch (error) {
@@ -61,7 +74,7 @@ const CreatePostInform = ({ id, info }) => {
   return (
     <form
       onSubmit={handleSubmit(submit)}
-      className="mx-auto flex flex-col w-[70%] items-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 gap-4"
+      className="mx-auto flex flex-col w-[250px] sm:w-[350px] items-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 gap-4"
     >
       <h3 className="text-2xl font-bold text-center">
         Register information about post mtto
