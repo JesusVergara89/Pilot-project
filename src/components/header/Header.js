@@ -27,7 +27,6 @@ const Header = () => {
   return (
     <>
       <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-       
         <img
           alt=""
           src="https://ansycar.mx/wp-content/uploads/2024/05/Fondo_Inicio.jpg"
@@ -70,11 +69,10 @@ const Header = () => {
               </h2>
               <p className="mt-8 text-pretty text-lg font-medium text-gray-300 sm:text-xl/8">
                 <span className="text-gray-100 font-bold">Bienvenido.</span> Con
-                esta herramienta podra recolectar de datos, como fotos, nombres,
-                ubicaciones y comentarios. Lo cual simplifica y agiliza la
-                gestión de información para informes de equipos, tierras
-                físicas, sistemas de pararrayos, mantenimiento preventivo y
-                correctivo.
+                esta herramienta podrá recolectar datos como fotos, nombres,
+                ubicaciones y comentarios, simplificando y agilizando la gestión
+                de información para informes de equipos, tierras físicas,
+                sistemas de pararrayos, y mantenimiento preventivo o correctivo.
               </p>
             </div>
           </div>
