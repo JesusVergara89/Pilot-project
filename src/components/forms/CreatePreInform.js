@@ -76,7 +76,7 @@ const CreatePreInform = ({ id, info }) => {
       className="mx-auto flex flex-col w-[310px] sm:w-[370px] items-center bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 gap-4"
     >
       <h3 className="text-2xl font-bold text-center">
-        Register information about pre mtto
+        Registar información de levantamientos
       </h3>
 
       <section className="flex flex-col w-full">

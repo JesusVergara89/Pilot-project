@@ -79,7 +79,7 @@ const PrePosInform = ({ info }) => {
             showPre ? "bg-blue-500 text-white" : "bg-gray-300 text-black"
           }`}
         >
-          Show Pre Info
+          Levantamientos
         </button>
         <button
           onClick={handleShowPost}
@@ -87,7 +87,7 @@ const PrePosInform = ({ info }) => {
             showPost ? "bg-blue-500 text-white" : "bg-gray-300 text-black"
           }`}
         >
-          Show Post Info
+          Mantenimientos
         </button>
       </div>
 
