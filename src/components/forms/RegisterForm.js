@@ -9,7 +9,6 @@ const RegisterForm = ({
   showPassword,
   togglePasswordVisibility,
   isLoading,
-  toHome,
 }) => {
   return (
     <div className="relative isolate overflow-hidden py-24 sm:py-32">
@@ -90,13 +89,6 @@ const RegisterForm = ({
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
                 Register
-              </button>
-              <button
-                onClick={toHome}
-                type="button"
-                className="bg-blue-900 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                Home
               </button>
             </>
           )}

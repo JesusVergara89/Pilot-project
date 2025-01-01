@@ -37,8 +37,6 @@ const Register = () => {
     }
   };
 
-  const toHome = () => navigate("/");
-
   return (
     <RegisterForm
     handleSubmit={handleSubmit}
@@ -48,7 +46,6 @@ const Register = () => {
     showPassword={showPassword}
     togglePasswordVisibility={togglePasswordVisibility}
     isLoading={isLoading}
-    toHome={toHome}
     />
   );
 };
