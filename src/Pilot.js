@@ -11,6 +11,7 @@ import ProjectInfo from "./components/projects/project/ProjectInfo";
 import LandingPage from "./components/projects/projectLadingPages/LandingPage";
 import Grounds from "./components/grounds/Grounds";
 import GroundInfo from "./components/grounds/ground/GroundInfo";
+import EditProject from "./components/edit/EditProject";
 
 function Pilot() {
   const [user, setUser] = useState(auth.currentUser);
@@ -35,6 +36,7 @@ function Pilot() {
           <Route path="/landaudit" element={<Grounds />} />
           <Route path="/projectinfo/:id" element={<ProjectInfo />} />
           <Route path="/groundinfo/:id" element={<GroundInfo />} />
+          <Route path="/edit/:id" element={<EditProject />} />
         </Route>
       </Routes>
     </div>

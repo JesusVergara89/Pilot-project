@@ -71,6 +71,7 @@ const CreatePostInform = ({ id, info }) => {
       toast("Error al actualizar el proyecto", { type: "error" });
     }
   };
+  
   return (
     <form
       onSubmit={handleSubmit(submit)}
