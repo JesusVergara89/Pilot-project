@@ -9,6 +9,8 @@ import Register from "./components/auth/Register";
 import Welcome from "./components/welcome/Welcome";
 import ProjectInfo from "./components/projects/project/ProjectInfo";
 import LandingPage from "./components/projects/projectLadingPages/LandingPage";
+import Grounds from "./components/grounds/Grounds";
+import GroundInfo from "./components/grounds/ground/GroundInfo";
 
 function Pilot() {
   const [user, setUser] = useState(auth.currentUser);
@@ -30,7 +32,9 @@ function Pilot() {
         <Route element={<ProtectedRoutes />}>
         <Route path="/landing" element={<LandingPage />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/landaudit" element={<Grounds />} />
           <Route path="/projectinfo/:id" element={<ProjectInfo />} />
+          <Route path="/groundinfo/:id" element={<GroundInfo />} />
         </Route>
       </Routes>
     </div>

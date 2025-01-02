@@ -25,6 +25,7 @@ const CreatePreInform = ({ id, info }) => {
     reset,
     formState: { errors },
   } = useForm();
+  
   const user = auth.currentUser;
 
   const submit = async (data) => {

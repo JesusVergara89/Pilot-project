@@ -15,7 +15,7 @@ const Project = ({ item }) => {
       </div>
       <div className="flex flex-col gap-2 px-6 pt-4 pb-2 text-left">
         <span className="inline-block border border-gray-700 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-          OTE: {item.identification}
+          OT: {item.identification}
         </span>
         <span className="inline-block border border-gray-700 bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
           Date: {item.createdAt.toDate().toDateString()}

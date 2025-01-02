@@ -1,4 +1,4 @@
-const data = {
+export const data = {
   description: "Instalación de tierras físicas",
   id: "nBXFfVfyU8kKgiCzwMgf",
   identification: "24-232",
@@ -37,7 +37,35 @@ const data = {
       ],
       status: "pending",
     },
-  }
+  },
 };
 
-export default data;
+export const data2 = {
+  brand: "brand",
+  client: "client",
+  createdAt: "createdAt",
+  equipment: "equipment",
+  model: "model",
+  ot: "ot",
+  plant: "plant",
+  serie: "serie",
+  userName: "userName",
+  data: [
+    {
+      application: "application",
+      cal: "cal",
+      continuity: "continuity",
+      current: "current",
+      e_v: "e_v",
+      f_d: "f_d",
+      image: "url_image",
+      location: "location",
+      observation: "observation",
+      point: "point",
+      r: "r",
+      resistance: "resistance",
+      tip_type_or_point_function: "tip_type_or_point_function",
+      data_loader: "data_loader",
+    },
+  ],
+};
