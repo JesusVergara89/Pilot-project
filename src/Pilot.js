@@ -35,11 +35,22 @@ function Pilot() {
         {/*<Route path="/register" element={<Register />} />*/}
         <Route path="/register" element={<NoFound />} />
         <Route element={<ProtectedRoutes />}>
-        <Route path="/landing" element={<LandingPage />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/landaudit" element={<Grounds />} />
-          <Route path="/projectinfo/:id" element={<ProjectInfo />} />
-          <Route path="/groundinfo/:id" element={<GroundInfo />} />
+        {/*<Route path="/landing" element={<LandingPage />} />*/}
+          <Route path="/landing" element={<NoFound />} />
+
+          {/*<Route path="/projects" element={<Projects />} />*/}
+          <Route path="/projects" element={<NoFound />} />
+
+          {/*<Route path="/landaudit" element={<Grounds />} />*/}
+          <Route path="/landaudit" element={<NoFound />} />
+
+          {/*<Route path="/projectinfo/:id" element={<ProjectInfo />} />*/}
+          <Route path="/projectinfo/:id" element={<NoFound />} />
+
+          {/*<Route path="/groundinfo/:id" element={<GroundInfo />} />*/}
+          <Route path="/groundinfo/:id" element={<NoFound />} />
+
+          {/*<Route path="/edit/:id" element={<EditProject />} />*/}
           <Route path="/edit/:id" element={<EditProject />} />
         </Route>
       </Routes>
