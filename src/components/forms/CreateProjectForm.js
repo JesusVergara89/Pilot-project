@@ -48,7 +48,6 @@ const CreateProjectForm = ({
         )}
       </section>
 
-      {/* * *  */}
       <section className="flex flex-col w-full">
         <label className="block text-gray-700 text-sm font-bold mb-2">
           Fecha de creación:
@@ -65,7 +64,6 @@ const CreateProjectForm = ({
         )}
       </section>
 
-      {/* * *  */}
       <section className="flex flex-col w-full">
         <label className="block text-gray-700 text-sm font-bold mb-2">
           Descripción:
@@ -99,7 +97,7 @@ const CreateProjectForm = ({
         )}
       </section>
 
-      {/* * *  */}
+      
       <section className="flex flex-col w-full">
         <label className="block text-gray-700 text-sm font-bold mb-2">
           Lugares:
@@ -130,7 +128,7 @@ const CreateProjectForm = ({
         </button>
       </section>
 
-      {/* * *  */}
+      
       <div className="text-center flex justify-center gap-4 mt-4">
         <button
           type="submit"

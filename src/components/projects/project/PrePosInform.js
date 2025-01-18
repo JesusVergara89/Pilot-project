@@ -33,32 +33,41 @@ const PrePosInform = ({ info }) => {
       images.map((item, index) => (
         <div
           key={index}
-          className="max-w-sm relative rounded-xl bg-slate-400 overflow-hidden shadow-lg"
+          className="relative rounded-xl bg-slate-400 overflow-hidden shadow-lg"
+          style={{ width: '200px', height: '350px' }}
         >
-          <img className="w-full" src={item.image} alt="description" />
-          <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">{item.element_name}</div>
-            <p className="text-gray-700 text-base">{item.description}</p>
-            <p className="text-gray-700 text-base">{item.comments}</p>
+          {/*  */}
+          <div style={{ height: '60%' }}>
+            <img
+              className="w-full h-full object-cover"
+              src={item.image}
+              alt="description"
+            />
           </div>
-          <div className="w-[80%] mx-auto flex flex-col gap-2 px-6 pt-4 pb-2 text-left">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-              <span className="font-bold text-blue-800">Date:</span>{" "}
-              {item.createdAt.toDate().toDateString()}
-            </span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-              <span className="font-bold text-blue-800">Loader:</span>{" "}
-              {item.data_loader}
-            </span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-              <span className="font-bold text-blue-800">Location:</span>{" "}
-              {item.location}
-            </span>
+          {/*  */}
+          <div className="px-4 py-2" style={{ height: '40%' }}>
+            <div className="font-bold text-base mb-1">{item.element_name}</div>
+            <p className="text-gray-700 text-sm">{item.description}</p>
+            <p className="text-gray-700 text-sm">{item.comments}</p>
+            <div className="flex flex-col gap-1 mt-2 text-left">
+              <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700">
+                <span className="font-bold text-blue-800">Date:</span>{' '}
+                {item.createdAt.toDate().toDateString()}
+              </span>
+              <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700">
+                <span className="font-bold text-blue-800">Loader:</span>{' '}
+                {item.data_loader}
+              </span>
+              <span className="inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700">
+                <span className="font-bold text-blue-800">Location:</span>{' '}
+                {item.location}
+              </span>
+            </div>
           </div>
-          <div className="flex justify-center mt-4">
+          <div className="absolute top-0 right-0">
             <button
               onClick={() => downloadImage(item.image)}
-              className="px-4 absolute top-0 right-0 py-2 bg-blue-500 text-white hover:bg-blue-700 transition-colors"
+              className="px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 transition-colors"
             >
               Expand Imagen
             </button>
